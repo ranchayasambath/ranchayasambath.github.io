@@ -1,161 +1,40 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Kaushan Script', cursive;
-}
-body{
-    background: linear-gradient(50deg, #48bfe3,#283593);
-    background-size: 500% 500% ;
-    animation: gradient 30s ease infinite;
-    height: 100vh;
-}
-@keyframes gradient {
-    0% {
-        background-position: 50% 60%;
-    }
-
-    50% {
-        background-position: 10% ;
-    }
-
-    100% {
-        background-position: 50% 60% ;
-    }
-}
-#skill,#exp,#dev,#academic,.nameBox{
-    background: hsla(0,0%,0%,40%) ;
-    backdrop-filter: blur(1em);
-    transform-origin: 65% 75%;
-    transition: transform 1s, filter .5s ease-out;
+#card{
+    /*border-radius: 1em;*/
+    text-align: center;
+    top: 13em;
+    position:absolute;
+    height:auto;
+    width: auto;
+    background: hsla(0,0%,100%,.1) ;
+    backdrop-filter: blur(.1em);
     color: white;
-    font-size: 1.5em;
+    transition: transform 1s ease-in-out;
 }
-#skill:hover,#exp:hover,#dev:hover,#academic:hover{
-    transform: scale(1.03);
+#card:hover{
+    transform: scale(1.30);
+}
+.card-container:hover::after{
+    filter: blur(0);
+    -webkit-filter: blur(0);
 }
 
-.resume{
-    padding: 2em;
+.card-container:hover .animated{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    transition: 3s ease-in-out;
 }
-header{
-
-    margin: 1em 1em 1em 1em;
-    background-color: white;
-    border-radius: 1em;
-    text-align: center;
-    transition: box-shadow 500ms;
-    /*font-family: Helvetica;*/
+a{
+    text-decoration: none;
+    font-size: 1.4em;
 }
-header>h1{
-    padding: .5em 0 0 0;
-}
-header>h2{
-    margin: .5em;
-}
-header>p{
-    padding: .5em;
-}
-.nav-link>ul{
+nav {
+    margin-top: 2.5em;
     display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
+    justify-content: space-between;
 }
-.nav-item{
-    display: flex;
-    background-color: #e9ecef;
-    flex-basis: 20%;
-    margin: 1em;
-    text-align: center;
-    border-radius: 1em;
+a:hover .icon{
+    color: white;
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.7)) drop-shadow(0 0 5px rgba(255,255,255,0.7)) drop-shadow(0 0 15px rgba(255,255,255,0.7));
 }
-.nav-container {
-    flex-basis: 100%;
-    padding: .5em;
-    border-radius: 1em;
-    transition: box-shadow 1000ms;
-}
-.nav-item:hover .nav-container {
-    flex-basis: 100%;
-    background: white;
-    border-radius: 1em;
-    transition: background-color 300ms ;
-    transition-timing-function: ease-in-out;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5), 0 5px 25px 0 rgba(0, 0, 0, 0.20);
-}
-.card {
-    flex-grow: 3;
-    flex-basis: 20%;
-    margin: 1em;
-    padding: 1em;
-    background: white;
-    transition: box-shadow 500ms;
-    border-radius: 1em;
-}
-.card:hover {
-    border-radius: 1em;
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5), 0 5px 25px 0 rgba(0, 0, 0, 0.20);
-}
-.nameBox:hover {
-    /*flex-basis: 20%;*/
-    /*background: white ;*/
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5), 0 5px 25px 0 rgba(0, 0, 0, .2);
-}
-
-h4{
-    padding: 0 0 0 1em;
-}
-h5{
-    padding: 1em 0 0  1em;
-}
-hr,h3{
-    margin: 1em;
-}
-p{
-    padding: 1em;
-}
-hr{
-    display: none;
-}
-
-@media only screen and (min-width: 1200px) {
-    #returnTop {
-        display: none;
-    }
-
-    .information {
-        display: flex;
-        align-content: space-between;
-    }
-}
-@media only screen and (max-width: 1199px) {
-    .nav-link > ul {
-        flex-direction: column;
-        padding: 0;
-    }
-    #returnTop{
-        text-decoration: none;
-        font-size: .8em;
-        /*font-family: sans-serif;*/
-        padding: 1em;
-        background-color: #e9ecef;
-        transition: background-color 1000ms ;
-        text-decoration-color: black;
-        transition: box-shadow 500ms;
-        border-radius: 2em;
-    }
-    #returnTop:hover{
-        font-size: .85em;
-        background-color: white;
-        transition: background-color 1000ms ;
-        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5), 0 5px 25px 0 rgba(0, 0, 0, .2);
-    }
-    #returnTop:visited{
-        color: inherit;
-        text-decoration: none;
-    }
-    #returnTop:active{
-        color: blue;
-
-    }
-}
+@media screen and(max-width:425px){#card{height:18em;width:19em;} #card:hover{transform:none;} canvas{height: 54.45em;}}
+@media screen and(min-width:2560px){#card{width: 45em;height: 20em;} .icon{font-size: 2em;}}
