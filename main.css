@@ -62,7 +62,7 @@ a:hover .icon, .container-arrow:hover{
         transform:translateY(10px)
     }
 }
-/*-----------------------------------*/
+/*------------------------------------*/
 @media screen and (max-width: 320px){#card{width: 18em;height: 17em}}
 @media screen and (min-width: 375px){#card{width: 22em} canvas{height: 54.45em}}
 @media screen and (min-width: 768px){#card{width: 30em} #card:hover{transform: scale(1.01)} .container-arrow{display: initial} .container-arrow{top: 35em;}
